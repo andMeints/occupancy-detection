@@ -12,7 +12,7 @@ Obj = PyLidar3.YdLidarX4(port) #PyLidar3.your_version_of_lidar(port,chunk_size)
 
 lst1= [] #holds the information of the very first scan
 lst2= [] #holds the newest 360 values to be compared to the initial data
-
+scans=10 #holds how many scans you want to do when running the code
 
 filename = 'LIDARdata.txt' #sets variable to put initial data into a text file
 filename2= 'NewLidardata.txt' #sets variable to put new information into a text file
@@ -49,7 +49,7 @@ def read_values():
 
         #scan ten times
         i=0
-        while i <10:
+        while i <scans:
             pos=(next(gen))
             
             #put all 360 values of each scan into the newlidardata.txt
